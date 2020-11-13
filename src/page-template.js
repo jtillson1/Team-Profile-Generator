@@ -1,15 +1,14 @@
 // create the team
 const generateTeam = team => {
 
-    // create the manager html
     const generateManager = manager => {
         return `
-        <div class="card employee-card">
-        <div class="card-header">
-            <h2 class="card-title">${manager.getName()}</h2>
-            <h3 class="card-title">${manager.getRole()}</h3>
+        <div class="card employeeCard">
+        <div class="cardHeader">
+            <h2 class="cardTitle">${manager.getName()}</h2>
+            <h3 class="cardTitle">${manager.getRole()}</h3>
         </div>
-        <div class="card-body">
+        <div class="cardBody">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}}">${manager.getEmail()}</a></li>
@@ -19,15 +18,13 @@ const generateTeam = team => {
     </div>
         `;
     };
-
-    // create the html for engineers
     const generateEngineer = engineer => {
         return `
-        <div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${engineer.getName()}</h2>
-        <h3 class="card-title">
-    <div class="card-body">
+        <div class="card employeeCard">
+    <div class="cardHeader">
+        <h2 class="cardTitle">${engineer.getName()}</h2>
+        <h3 class="cardTitle">
+    <div class="cardBody">
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
@@ -37,16 +34,14 @@ const generateTeam = team => {
 </div>
         `;
     };
-
-    // create the html for interns
     const generateIntern = intern => {
         return `
-        <div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">${intern.getName()}</h2>
-        <h3 class="card-title">${intern.getRole()}</h3>
+        <div class="card employeeCard">
+    <div class="cardHeader">
+        <h2 class="cardTitle">${intern.getName()}</h2>
+        <h3 class="cardTitle">${intern.getRole()}</h3>
     </div>
-    <div class="card-body">
+    <div class="cardBody">
         <ul class="list-group">
         <li class="list-group-item">ID: ${intern.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
@@ -82,31 +77,29 @@ const generateTeam = team => {
 module.exports = team => {
 
     return `
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My Team</title>
+    <title>My Employee Team</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/style.css">
-
+        <link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading">
-                <h1 class="text-center">My Team</h1>
+            <div class="col-12 jumbotron mb-3 header">
+                <h1 class="text-center">The Team</h1>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
+            <div class="teambox col-12 d-flex justify-content-center">
                 ${generateTeam(team)}
             </div>
         </div>
